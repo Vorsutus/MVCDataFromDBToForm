@@ -61,9 +61,12 @@
     <Folder Include="Publish Profiles\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Publish Profiles\MVCDemoDB.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
     <Build Include="dbo\Tables\Employee.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Publish Profiles\MVCDemoDB.publish.xml" />
+    <RefactorLog Include="MVCDemoDB.refactorlog" />
   </ItemGroup>
 </Project>
