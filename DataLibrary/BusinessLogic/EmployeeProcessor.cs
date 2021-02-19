@@ -30,7 +30,7 @@ namespace DataLibrary.BusinessLogic
             return SQLDataAccess.SaveData(sql, data);
         }
 
-        //load the employees from out DataLibrary Employees
+        //load the employees from the DataLibrary Employees and pass them up the chain
         public static List<EmployeeModel> LoadEmployees()
         {
             string sql = @"select Id, EmployeeId, FirstName, LastName, EmailAddress
