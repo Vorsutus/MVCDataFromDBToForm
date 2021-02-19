@@ -36,6 +36,35 @@ namespace MVCApp.Controllers
 
             return View();
         }
+        
+        //creating a view to display Employees
+        public ActionResult ViewEmployees()
+        {
+            ViewBag.Message = "Employees List";
+
+            //make a call to the method in business logic (Employee Processor) to return all the employees in the DB
+            var data = LoadEmployees();
+
+            //create a new List of employees following the Employee Model
+            List<EmployeeModel> employees = new List<EmployeeModel>();
+
+            //for each employee row in the Loaded Employees...
+            foreach (var row in data)
+            {
+                //Add the new EmployeeModel with the following information to the employees list
+                employees.Add(new EmployeeModel
+                {
+                    EmployeeId = row.EmployeeId,
+                    FirstName = row.FirstName,
+                    LastName = row.LastName,
+                    EmailAddress = row.EmailAddress
+                });
+            }
+
+            //pass the employees into the View
+            return View(employees);
+        }
+
 
         //send data with this method
         [HttpPost]

@@ -34,7 +34,7 @@ namespace DataLibrary.BusinessLogic
         public static List<EmployeeModel> LoadEmployees()
         {
             string sql = @"select Id, EmployeeId, FirstName, LastName, EmailAddress
-                            from dbo.Employees;";
+                            from dbo.Employee;";
 
             //loading all employees back to the Database
             return SQLDataAccess.LoadData<EmployeeModel>(sql);
